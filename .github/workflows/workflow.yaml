@@ -1,6 +1,6 @@
 name: 'Terraform CI'
 
-o:
+on:
   push:
     branches:
     - main
