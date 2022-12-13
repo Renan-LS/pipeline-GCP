@@ -6,6 +6,7 @@ on:
     - master
     paths:
       - '**.tf'
+      - '**.tfvars'
   pull_request:
 
 jobs:
