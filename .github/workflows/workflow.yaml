@@ -4,9 +4,7 @@ on:
   push:
     branches:
     - master
-    paths:
-      - '**.tf'
-      - '**.tfvars'
+
   pull_request:
 
 jobs:
