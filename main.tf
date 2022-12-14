@@ -1,4 +1,7 @@
 //ESPECIFICA A AÇÃO A SER REALIZADA PELO TERRAFORm
+//**PS, TERRAFORM VERIFICA O QUE ESTA SENDO ESPECIFICADO FAZER, SENAO TA DESCRITO, ELE DESTROI O QUE FOI FEITO NA INTERAÇÃO ANTERIOR.
+//EX: Em uma interação do terraform, ele cria a table A. Se eu rodar terraform novamente, criando a tabela B e C, e por algum motivo a criação da 
+//table A não estiver mais nas ações do TERRAFORM, ele automaticamente DESTROI a table A e cria as B e C.
 module "bigquery-dataset-gasolina" {
   source  = "./modules/bigquery"
   dataset_id                  = "gasolina_brasil"
