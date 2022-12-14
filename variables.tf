@@ -1,3 +1,5 @@
+//ESPECIFICA O TIPO DAS VARIÁVEIS UTILIZADAS NO TERRAFORM.TVARS
+
 variable "project_id" {
   type        = string
   description = "The Google Cloud Project Id"

@@ -1,3 +1,6 @@
+#WORKFLOW que define as tarefas a serem realizadas pelo terraform.
+#template obtido diretamente nas actions do github actions
+
 name: 'Terraform CI'
 
 on:

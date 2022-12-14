@@ -1,2 +1,3 @@
-project_id = "upheld-pursuit-371419"
+//DECLARAÇÕES DE VARIAVEIS UTILIZADAS NO PROJETO
+project_id = "upheld-pursuit-371419" //ID DO PROJETO É DIFERENTE DO NOME DO PROJETO - DEPENDE DA CLOUD QUE SE ESTÁ UTILIZANDO
 region     = "us-central1"
