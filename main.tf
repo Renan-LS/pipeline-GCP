@@ -1,4 +1,4 @@
-//ESPECIFICA A AÇÃO A SER REALIZADA PELO TERRAFORM
+//ESPECIFICA A AÇÃO A SER REALIZADA PELO TERRAFORm
 module "bigquery-dataset-gasolina" {
   source  = "./modules/bigquery"
   dataset_id                  = "gasolina_brasil"
