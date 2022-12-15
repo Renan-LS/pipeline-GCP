@@ -1,0 +1,1 @@
+gcloud run deploy pipeline-gcp --source . --region us-central1
