@@ -1,9 +1,9 @@
-# GCP - Stack Data Pipeline ---- EM CONSTRUÇÃO ----
+# GCP - Stack Data Pipeline --- EM CONSTRUÇÃO ---
 
 O objetivo desse projeto foi criar um pipeline de dados para extrair informações de uma base de dados pública acerca do preço dos combustíveis no Brasil. 
 
 - **Fonte de Dados:** 
-  - Site: https://dados.gov.br/dataset/serie-historica-de-precos-de-combustiveis-por-revenda
+  - Site: https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis
   - Metadados: https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/metadados-serie-historica-precos-combustiveis.pdf
 
 Para este projeto, foram usados as seguintes tecnologias: 
