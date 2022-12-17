@@ -31,6 +31,22 @@ API:
   - código da MAIN comentado para melhor compreensão.
     - nele fica claro a funcionalidade de colher o csv da fonte de dados, e persistir no bucket raw.
 
+  - "pip freeze > requirements.txt" - separa em um arquivo texto tudo que nossa API precisa parar realizar deployment
+  - criar um Dockerfile, que vai ser onde a imagem do serviço vai rodar
+  - criar um deploy.sh com só isso - "gcloud run deploy pipeline-gcp --source . --region us-central1" 
+    - e isto é o que vai deploiar nossa aplicação,  via SDK
+
+PARTE 3: 
+  - cria-se um cluster no DATAPROC
+    - marca o component gateway ( habilita a web interface do cluster) e habilita o jupyter notebook.
+    - na aba Personalisar Cluster -> seleciona la em baixo a Staging á  rea (nosso caso (...)pyspark-tmp2)
+    - Vai na pasta LocalDisk, cria uma pasta(datapipeline), e abre um notebook Python3(comb_br)
+    - no notebook é desenvolvido o script protótipo para realizar a operação básica de processamento de dados e demais tratamentos,
+    ele se encontra na pasta etl-spark, função MAIN.py
+
+PARTE 4:
+  - 
+
 
 
 
