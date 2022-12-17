@@ -1,0 +1,48 @@
+[2022-12-17T12:52:47.091+0000] {processor.py:153} INFO - Started process (PID=106) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:52:47.091+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py for tasks to queue
+[2022-12-17T12:52:47.092+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:52:47.092+0000] {dagbag.py:538} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:52:47.159+0000] {logging_mixin.py:137} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/dag.py:3524 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-12-17T12:52:47.167+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_sensor_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:52:47.195+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:52:47.195+0000] {dag.py:2676} INFO - Sync 1 DAGs
+[2022-12-17T12:52:47.276+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:52:47.275+0000] {dag.py:3427} INFO - Setting next_dagrun for example_sensor_decorator to None, run_after=None
+[2022-12-17T12:52:47.363+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py took 0.276 seconds
+[2022-12-17T12:53:17.869+0000] {processor.py:153} INFO - Started process (PID=192) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:53:17.869+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py for tasks to queue
+[2022-12-17T12:53:17.870+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:53:17.870+0000] {dagbag.py:538} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:53:17.891+0000] {logging_mixin.py:137} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/dag.py:3524 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-12-17T12:53:17.898+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_sensor_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:53:17.933+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:53:17.933+0000] {dag.py:2676} INFO - Sync 1 DAGs
+[2022-12-17T12:53:17.958+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:53:17.958+0000] {dag.py:3427} INFO - Setting next_dagrun for example_sensor_decorator to None, run_after=None
+[2022-12-17T12:53:17.984+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py took 0.118 seconds
+[2022-12-17T12:53:48.156+0000] {processor.py:153} INFO - Started process (PID=277) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:53:48.157+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py for tasks to queue
+[2022-12-17T12:53:48.157+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:53:48.157+0000] {dagbag.py:538} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:53:48.177+0000] {logging_mixin.py:137} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/dag.py:3524 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-12-17T12:53:48.185+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_sensor_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:53:48.220+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:53:48.220+0000] {dag.py:2676} INFO - Sync 1 DAGs
+[2022-12-17T12:53:48.246+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:53:48.246+0000] {dag.py:3427} INFO - Setting next_dagrun for example_sensor_decorator to None, run_after=None
+[2022-12-17T12:53:48.283+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py took 0.130 seconds
+[2022-12-17T12:54:18.440+0000] {processor.py:153} INFO - Started process (PID=387) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:54:18.441+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py for tasks to queue
+[2022-12-17T12:54:18.442+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:54:18.442+0000] {dagbag.py:538} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:54:18.461+0000] {logging_mixin.py:137} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/dag.py:3524 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-12-17T12:54:18.468+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_sensor_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:54:18.500+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:54:18.500+0000] {dag.py:2676} INFO - Sync 1 DAGs
+[2022-12-17T12:54:18.524+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:54:18.524+0000] {dag.py:3427} INFO - Setting next_dagrun for example_sensor_decorator to None, run_after=None
+[2022-12-17T12:54:18.554+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py took 0.115 seconds
+[2022-12-17T12:54:49.422+0000] {processor.py:153} INFO - Started process (PID=474) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:54:49.422+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py for tasks to queue
+[2022-12-17T12:54:49.423+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:54:49.423+0000] {dagbag.py:538} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:54:49.444+0000] {logging_mixin.py:137} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/dag.py:3524 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-12-17T12:54:49.452+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_sensor_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:54:49.495+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:54:49.495+0000] {dag.py:2676} INFO - Sync 1 DAGs
+[2022-12-17T12:54:49.522+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:54:49.522+0000] {dag.py:3427} INFO - Setting next_dagrun for example_sensor_decorator to None, run_after=None
+[2022-12-17T12:54:49.551+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py took 0.131 seconds
+[2022-12-17T12:55:20.216+0000] {processor.py:153} INFO - Started process (PID=569) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:55:20.217+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py for tasks to queue
+[2022-12-17T12:55:20.217+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:55:20.217+0000] {dagbag.py:538} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:55:20.237+0000] {logging_mixin.py:137} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/dag.py:3524 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-12-17T12:55:20.244+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_sensor_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py
+[2022-12-17T12:55:20.280+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:55:20.280+0000] {dag.py:2676} INFO - Sync 1 DAGs
+[2022-12-17T12:55:20.307+0000] {logging_mixin.py:137} INFO - [2022-12-17T12:55:20.307+0000] {dag.py:3427} INFO - Setting next_dagrun for example_sensor_decorator to None, run_after=None
+[2022-12-17T12:55:20.450+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sensor_decorator.py took 0.237 seconds

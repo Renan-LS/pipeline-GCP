@@ -45,7 +45,7 @@ PARTE 3:
     ele se encontra na pasta etl-spark, função MAIN.py
 
 PARTE 4:
-  - 
+  - subindo o airflow
 
 
 
