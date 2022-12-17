@@ -1,9 +1,9 @@
-# GCP - Stack Data Pipeline --- EM CONSTRUÇÃO ---
+# GCP - Stack Data Pipeline
 
 O objetivo desse projeto foi criar um pipeline de dados para extrair informações de uma base de dados pública acerca do preço dos combustíveis no Brasil. 
 
 - **Fonte de Dados:** 
-  - Site: https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis
+  - Site: https://dados.gov.br/dataset/serie-historica-de-precos-de-combustiveis-por-revenda
   - Metadados: https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/metadados-serie-historica-precos-combustiveis.pdf
 
 Para este projeto, foram usados as seguintes tecnologias: 
@@ -19,7 +19,7 @@ Para este projeto, foram usados as seguintes tecnologias:
 
 Os componentes foram organizados na seguinte arquitetura: 
 
-![alt text](./img/combustiveis_brasil.png)
+![alt text](https://raw.githubusercontent.com/gabrielosluz/stack_gcp_data_pipeline/main/img/combustiveis_brasil.png)
 
 Para o Airflow, foi utilizada uma imagem docker que está no diretório /airflow. Entretanto, para  subir o serviço localmente basta executar o comando **make** a partir do diretório raiz. 
 
