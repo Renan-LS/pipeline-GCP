@@ -1,0 +1,26 @@
+[2022-12-17T16:51:30.951+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: dag_combustivel.pyspark_task scheduled__2015-07-01T00:00:00+00:00 [queued]>
+[2022-12-17T16:51:30.961+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: dag_combustivel.pyspark_task scheduled__2015-07-01T00:00:00+00:00 [queued]>
+[2022-12-17T16:51:30.961+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-17T16:51:30.961+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2022-12-17T16:51:30.961+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-17T16:51:30.974+0000] {taskinstance.py:1304} INFO - Executing <Task(DataprocSubmitJobOperator): pyspark_task> on 2015-07-01 00:00:00+00:00
+[2022-12-17T16:51:30.983+0000] {standard_task_runner.py:55} INFO - Started process 26719 to run task
+[2022-12-17T16:51:30.986+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dag_combustivel', 'pyspark_task', 'scheduled__2015-07-01T00:00:00+00:00', '--job-id', '104', '--raw', '--subdir', 'DAGS_FOLDER/dag_combustivel.py', '--cfg-path', '/tmp/tmpi0ih3nts']
+[2022-12-17T16:51:30.987+0000] {standard_task_runner.py:83} INFO - Job 104: Subtask pyspark_task
+[2022-12-17T16:51:31.043+0000] {task_command.py:389} INFO - Running <TaskInstance: dag_combustivel.pyspark_task scheduled__2015-07-01T00:00:00+00:00 [running]> on host d2cc3443255e
+[2022-12-17T16:51:31.124+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dag_combustivel
+AIRFLOW_CTX_TASK_ID=pyspark_task
+AIRFLOW_CTX_EXECUTION_DATE=2015-07-01T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2015-07-01T00:00:00+00:00
+[2022-12-17T16:51:31.125+0000] {dataproc.py:1865} INFO - Submitting job
+[2022-12-17T16:51:31.135+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2022-12-17T16:51:31.474+0000] {dataproc.py:1877} INFO - Job d01de4a8-f5b9-4c7a-a60c-a1e4b2eddb1b submitted successfully.
+[2022-12-17T16:51:31.486+0000] {dataproc.py:1897} INFO - Waiting for job d01de4a8-f5b9-4c7a-a60c-a1e4b2eddb1b to complete
+[2022-12-17T16:52:33.378+0000] {dataproc.py:1901} INFO - Job d01de4a8-f5b9-4c7a-a60c-a1e4b2eddb1b completed successfully.
+[2022-12-17T16:52:33.397+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=dag_combustivel, task_id=pyspark_task, execution_date=20150701T000000, start_date=20221217T165130, end_date=20221217T165233
+[2022-12-17T16:52:33.455+0000] {local_task_job.py:159} INFO - Task exited with return code 0

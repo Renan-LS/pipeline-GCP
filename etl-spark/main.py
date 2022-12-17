@@ -20,12 +20,13 @@ def start_or_create_spark():
 def rename_columns(dataframe):
     """
     Escreva uma função que receba o Dataframe Spark e realize o rename de colunas acordo
-    com a documentação do BigQuery: https://cloud.google.com/bigquery/docs/schemas#:~:text=description%20and%20mode.-,Column%20names,name%20length%20is%20300%20characters.
+    com a documentação do BigQuery: 
+    https://cloud.google.com/bigquery/docs/schemas#:~:text=description%20and%20mode.-,Column%20names,name%20length%20is%20300%20characters.
     e retorne o Dataframe com as colunas renomeadas.
     Tip: withColumnRenamed
     """
     dataframe = dataframe.select([functions.col(x).alias(x.lower()) for x in dataframe.columns])
-    dataframe = dataframe.select([functions.col(col).alias(re.sub(" -", "", col)) for col in dataframe.columns])
+    dataframe = dataframe.select([functions.col(col).alias(re.sub(" -00", "", col)) for col in dataframe.columns])
     dataframe = dataframe.select([functions.col(col).alias(re.sub(" ", "_", col)) for col in dataframe.columns])
 
     return dataframe

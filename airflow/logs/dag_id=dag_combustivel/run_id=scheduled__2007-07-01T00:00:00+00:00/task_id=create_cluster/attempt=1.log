@@ -1,0 +1,24 @@
+[2022-12-17T15:23:25.374+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: dag_combustivel.create_cluster scheduled__2007-07-01T00:00:00+00:00 [queued]>
+[2022-12-17T15:23:25.383+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: dag_combustivel.create_cluster scheduled__2007-07-01T00:00:00+00:00 [queued]>
+[2022-12-17T15:23:25.383+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-17T15:23:25.383+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2022-12-17T15:23:25.384+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-17T15:23:25.397+0000] {taskinstance.py:1304} INFO - Executing <Task(DataprocCreateClusterOperator): create_cluster> on 2007-07-01 00:00:00+00:00
+[2022-12-17T15:23:25.406+0000] {standard_task_runner.py:55} INFO - Started process 12733 to run task
+[2022-12-17T15:23:25.409+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dag_combustivel', 'create_cluster', 'scheduled__2007-07-01T00:00:00+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/dag_combustivel.py', '--cfg-path', '/tmp/tmpc0sjz_ml']
+[2022-12-17T15:23:25.410+0000] {standard_task_runner.py:83} INFO - Job 39: Subtask create_cluster
+[2022-12-17T15:23:25.472+0000] {task_command.py:389} INFO - Running <TaskInstance: dag_combustivel.create_cluster scheduled__2007-07-01T00:00:00+00:00 [running]> on host d2cc3443255e
+[2022-12-17T15:23:25.548+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dag_combustivel
+AIRFLOW_CTX_TASK_ID=create_cluster
+AIRFLOW_CTX_EXECUTION_DATE=2007-07-01T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2007-07-01T00:00:00+00:00
+[2022-12-17T15:23:25.549+0000] {dataproc.py:591} INFO - Creating cluster: stack-data-pipeline2
+[2022-12-17T15:23:25.557+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2022-12-17T15:26:24.209+0000] {dataproc.py:535} INFO - Cluster created.
+[2022-12-17T15:26:24.236+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=dag_combustivel, task_id=create_cluster, execution_date=20070701T000000, start_date=20221217T152325, end_date=20221217T152624
+[2022-12-17T15:26:24.281+0000] {local_task_job.py:159} INFO - Task exited with return code 0
