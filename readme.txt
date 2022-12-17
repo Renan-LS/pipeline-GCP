@@ -48,5 +48,7 @@ PARTE 4:
   - subindo o airflow
 
 
+Cloud Composer = airflow
+
 
 
