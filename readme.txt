@@ -1,54 +1,53 @@
-PARTE 1:
+# GCP - Stack Data Pipeline ---- EM CONSTRUÇÃO ----
 
-google CLOUD
-- cria-se uma conta no google console, com 90 dias grátis de utilização 
+O objetivo desse projeto foi criar um pipeline de dados para extrair informações de uma base de dados pública acerca do preço dos combustíveis no Brasil. 
 
-- cria-se um SERVICE acount para fazer com que o GITHUB tenha interaçãoc om o GCP
- - IAM -> contas de serviço -> "selecionar papel -> editor[maior nivel de privilégio]" 
- - criando chave para autenticação:
-  - clica na conta de serviço -> chaves =[json]
-  - NAO esquecer de anexar o conteúdo do arquivo JSON ao repositorio de trabalho, através das SETTINGS -> SECRETS -> Actions 
-    é através desta ação que o github actions através do terraform consegue acessar o projeto na GCP para criação/alteração de buckets e demais tb_historico_combustivel_brasil 
+- **Fonte de Dados:** 
+  - Site: https://dados.gov.br/dataset/serie-historica-de-precos-de-combustiveis-por-revenda
+  - Metadados: https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/metadados-serie-historica-precos-combustiveis.pdf
 
-- instalar API - Cloud Resource Manager API - necessário quando for utilizar recursos na cloud GCP
-- precisamos "setar o projeto". precisei ir no shell do google cloud sdk.
- - "gcloud config set project "nome do projeto"[datapipeline01]
- - "gcloud config list" - verifica se ta autenticado na conta certa e deu certo "setar" o projeto
+Para este projeto, foram usados as seguintes tecnologias: 
 
-- agora criar o pipeline público:
-  - cria-se toda infraestrutura do terraform [main - providers - terraformTVARS - variables] e a esteira WORKFLOW
+- **Terraform**: Para criar recursos do projeto;
+- **Github Actions**: Para criar uma esteira de CI/CD para fazer o deploy automatizado dos recursos do projeto, auxiliando o Terraform;
+- **Airflow**: Para realizar a tarefa de orquestrar o pipeline;
+- **Google Cloud Storage:** Para armazenamento de dados Brutos e Curados;
+- **Big Query:** Para armazenamento de dados curados;
+- **Looker Studio (antigo Data Studio):** Para criação do Dashboard;
+- **Google Cloud Dataproc:** Para processamento de dados com Spark;
+- **Google Cloud Run:** Para hospedar a API que realize a coleta dos dados dos Combustíveis;
 
-concluído a parte 1 do projeto, deve-se ter 5 buckets criados na GCP, através do TERRAFORM e GITHUB Actions.
+Os componentes foram organizados na seguinte arquitetura: 
 
-PARTE 2: 
+![alt text](./img/combustiveis_brasil.png)
 
-API: 
-  - Primeiro cria-se a pasta API -> main.py
-  - cria-se um ambiente virtual para instalar as lib's necessarias 
-    - pip3 install uvicorn - fastapi - google-cloud-storage - requests - pydantic ()
-  - agora, vamos para pasta da api, e da start no servidor "uvicorn main:app"
-    - isso é feito após preencher o main.py com um hellow-world para testar se o serviço de API está funcionando
-  - código da MAIN comentado para melhor compreensão.
-    - nele fica claro a funcionalidade de colher o csv da fonte de dados, e persistir no bucket raw.
+Para o Airflow, foi utilizada uma imagem docker que está no diretório /airflow. Entretanto, para  subir o serviço localmente basta executar o comando **make** a partir do diretório raiz. 
 
-  - "pip freeze > requirements.txt" - separa em um arquivo texto tudo que nossa API precisa parar realizar deployment
-  - criar um Dockerfile, que vai ser onde a imagem do serviço vai rodar
-  - criar um deploy.sh com só isso - "gcloud run deploy pipeline-gcp --source . --region us-central1" 
-    - e isto é o que vai deploiar nossa aplicação,  via SDK
+A imagem abaixo ilustra a DAG criada para a orquestração. Existem dois operadores Dummy no inicio e fim para fins de organização. A task get_op é a responsável por realizar a chamada da API presente no Cloud Run e assim extrair os dados da fonte. Em seguida, a task create_cluster cria um cluster dataproc para realizar o processamento dos dados com Spark. A próxima task roda o job de processamento dentro do cluster recém criado e por último é feita a remoção do cluster.
 
-PARTE 3: 
-  - cria-se um cluster no DATAPROC
-    - marca o component gateway ( habilita a web interface do cluster) e habilita o jupyter notebook.
-    - na aba Personalisar Cluster -> seleciona la em baixo a Staging á  rea (nosso caso (...)pyspark-tmp2)
-    - Vai na pasta LocalDisk, cria uma pasta(datapipeline), e abre um notebook Python3(comb_br)
-    - no notebook é desenvolvido o script protótipo para realizar a operação básica de processamento de dados e demais tratamentos,
-    ele se encontra na pasta etl-spark, função MAIN.py
+![alt text](./img/dag.png)
 
-PARTE 4:
-  - subindo o airflow
+A API foi feita utilizando o framework FastAPI e está presente no diretório /api. Para realizar o deploy dessa aplicação no Cloud Run basta executar o shell script presente na mesma pasta. Para que o deploy seja de fato realizado, é preciso estar logado em sua conta na Google Cloud Platform através da SDK. Caso ainda não tenha instalado, basta acessar esse [link](https://cloud.google.com/sdk/docs/install-sdk).
 
+O pipeline em PySpark seguiu os seguintes passos: 
 
-Cloud Composer = airflow
+A função main recebe como parâmetro:
+- path_input: Caminho dos dados no GCS gerados pela API coletora. Ex: gs://bucket_name/file_name.
+- path_output: Caminho de onde será salvo os dados processados. Ex: gs://bucket_name_2/file_name.
+- formato_file_save: Formato de arquivo a ser salvo no path_output. Ex: PARQUET.
+- dataset: Dataset no BigQuery onde está a tabela.
+- tabela_bq: Tabela do BigQuery que será salvo os dados. Ex: dataset.tabela_exemplo
 
+Quanto a transformação de dados, foram realizadas as seguintes etapas: 
 
+1. Faça a leitura dos dados de acordo com o path_input informado
+2. Realize o rename de colunas do arquivo, respeitando os padrões do BigQuery
+3. Adicione uma coluna de Ano, baseado na coluna `Data da Coleta`
+4. Adicione uma coluna de Semestre, baseado na coluna de `Data da Coleta`
+5. Adicione uma coluna Filename. Tip: pyspark.sql.functions.input_file_name
+6. Faça o parse dos dados lidos de acordo com a tabela no BigQuery
+7. Escreva os dados no Bucket GCS, no caminho informado `path_output`
+no formato especificado no atributo `formato_file_save`.
+8. Escreva os dados no BigQuery de acordo com a tabela especificada no atributo `tabela_bq`.
 
+Por último, foi desenvolvido um dashboard usando a ferramenta Looker Studio, da GCP. Para isso, na página inicial do Looker Studio foi selecionado a criação de um report em branco e em seguida, foi feita a conexão do dashboard com a tabela no BigQuery onde dados extraídos foram enviados. 
